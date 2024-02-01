@@ -1,5 +1,6 @@
 import React from 'react'
 import { plantList } from '../datas/plantList.js'
+import CareScale from './CareScale.js';
 
 export default function ShoppingList() {
 
@@ -34,10 +35,18 @@ export default function ShoppingList() {
             <ul>
                 <h2>plante a vendre </h2>
                 {plantList.map((plant) => (
-                    <li key={plant.id}>{plant.name}</li>
+                    <li key={plant.id}>
+                        {plant.name}
+                        {plant.isBestSale ? <span>🔥 </span> :  null }
+                        {plant.isSpecialOffer && <div className='lmj-sales'>SOLDES</div> }
+                        <CareScale careType='light' scaleValue={plant.light}/>
+                        <CareScale careType='water' scaleValue={plant.water}/>
+                        </li>
+                        
                 ))}
+               
             </ul>
-
+                    
 
         </>
     )
