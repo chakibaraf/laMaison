@@ -4,7 +4,7 @@ import '../styles/Banner.css'
 import logo from '../assets/logo.png'
 
 export default function Banner() {
-  const title = "la maison de la jungle";
+  const title = "la Maison Plante";
   return (
     <>
     <img src={logo} alt=""  className='lmj-logo'/>
