@@ -15,7 +15,7 @@ export default function PlantItem({name, cover,id,light,water}) {
         <img className='lmj-plant-item-cover'src={cover} alt={`${name} cover`}/>
     {name}
      </li>
-    <div>PlantItem</div>
+   
      
      <CareScale careType='light' scaleValue={light}/>
      <CareScale careType='water' scaleValue={water}/>

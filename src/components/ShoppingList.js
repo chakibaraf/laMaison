@@ -2,6 +2,7 @@ import React from 'react'
 import { plantList } from '../datas/plantList.js'
 
 import PlantItem from './PlantItem.js';
+import QuestionForm from './QuestionForm.js';
 
 export default function ShoppingList() {
 
@@ -69,7 +70,7 @@ export default function ShoppingList() {
 
             </ul>
                     
-
+            <QuestionForm/>
         </>
     )
 }
