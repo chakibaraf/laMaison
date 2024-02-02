@@ -1,6 +1,7 @@
 import React from 'react'
 import { plantList } from '../datas/plantList.js'
-import CareScale from './CareScale.js';
+
+import PlantItem from './PlantItem.js';
 
 export default function ShoppingList() {
 
@@ -25,14 +26,8 @@ export default function ShoppingList() {
     }, [])
     */
     return (
-        <>
-            <h2> Categorie de plante</h2>
-            <ul>
-                {categoriesUniques.map((category, index) => (
-                    <li key={index}>{category}</li>
-                ))}
-            </ul>
-            <ul>
+        /**
+         * <ul>
                 <h2>plante a vendre </h2>
                 {plantList.map((plant) => (
                     <li key={plant.id}>
@@ -41,10 +36,37 @@ export default function ShoppingList() {
                         {plant.isSpecialOffer && <div className='lmj-sales'>SOLDES</div> }
                         <CareScale careType='light' scaleValue={plant.light}/>
                         <CareScale careType='water' scaleValue={plant.water}/>
-                        </li>
+                       
+    
+                            </li>
+                            
                         
                 ))}
                
+            </ul>
+         */
+        <>
+            <h2> Categorie de plante</h2>
+            
+            <ul>
+                {categoriesUniques.map((category, index) => (
+                    <li key={index}>{category}</li>
+                ))}
+            </ul>
+            
+
+            <ul className='lmj-plant-list'>
+                {plantList.map(({id, cover , name , water , light})=>(
+                    <PlantItem
+                    id={id}
+                    cover={cover}
+                    name={name}
+                    water={water}
+                    light={light}
+                    
+                    />
+                ))}
+
             </ul>
                     
 
