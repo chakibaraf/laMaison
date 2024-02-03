@@ -20,6 +20,7 @@ export default function Cart() {
         <div>
           Monstera : {monsteraPrice}€
           <button onClick={() => updateCart(cart + 1)}>Ajouter</button>
+          <button onClick={()=> updateCart(0)}>vider le panier</button>
         </div>
         <h3> Total : {monsteraPrice * cart}€</h3>
       </div>
