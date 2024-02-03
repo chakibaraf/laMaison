@@ -1,23 +1,35 @@
 import React from 'react'
-import { plantList } from '../datas/plantList';
-export default function Categorie() {
+
+
+
+
+
+export default function Categorie({ setActiveCategorie, activeCategorie , categoriesUniques}) {
+/*
     const categoriesUniques = plantList.reduce((acc, plante) => {
         if (!acc.includes(plante.category)) {
             acc.push(plante.category);
         }
         return acc;
-    }, [])
-  return (
-    <>
-    <h2> Categorie de plante</h2>
-    <div>
+    }, [])*/
+    return (
+        <>
+            <h2> Categorie de plante</h2>
+            <div>
+                <ul>
 
-        <ul>
-            {categoriesUniques.map((category, index) => (
-                <li key={index}>{category}</li>
-                ))}
-        </ul>
-    </div>
-                </>
-  )
+                    <select 
+                    value={activeCategorie}
+                    onChange={(e)=> setActiveCategorie(e.target.value)}
+                    >
+                        <option value="'">----</option>
+                        {categoriesUniques.map((category, index) => (
+                            <option key={category} value={category}>{category} </option>
+                        ))}
+
+                    </select>
+                </ul>
+            </div>
+        </>
+    )
 }

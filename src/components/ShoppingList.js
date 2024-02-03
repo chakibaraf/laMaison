@@ -1,12 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { plantList } from '../datas/plantList.js'
 import '../styles/ShoppingList.css';
 import PlantItem from './PlantItem.js';
 import QuestionForm from './QuestionForm.js';
 import Categorie from './Categorie.js';
 
-export default function ShoppingList({cart , updateCart}) {
+export default function ShoppingList({ cart, updateCart }) {
 
+    const [activeCategorie, setActiveCategorie] = useState('')
 
 
     // fonction qui permet de rendre unique la categorie de ne pas avoir de doublon 
@@ -27,47 +28,57 @@ export default function ShoppingList({cart , updateCart}) {
         return acc;
     }, [])
     */
-   return (
-       /**
-        * <ul>
-       <h2>plante a vendre </h2>
-       {plantList.map((plant) => (
-           <li key={plant.id}>
-           {plant.name}
-           {plant.isBestSale ? <span>🔥 </span> :  null }
-           {plant.isSpecialOffer && <div className='lmj-sales'>SOLDES</div> }
-           <CareScale careType='light' scaleValue={plant.light}/>
-           <CareScale careType='water' scaleValue={plant.water}/>
-           
-           
-           </li>
-           
-           
-           ))}
-           
-           </ul>
-           */
-          <>
+    return (
+        /**
+         * <ul>
+        <h2>plante a vendre </h2>
+        {plantList.map((plant) => (
+            <li key={plant.id}>
+            {plant.name}
+            {plant.isBestSale ? <span>🔥 </span> :  null }
+            {plant.isSpecialOffer && <div className='lmj-sales'>SOLDES</div> }
+            <CareScale careType='light' scaleValue={plant.light}/>
+            <CareScale careType='water' scaleValue={plant.water}/>
+            
+            
+            </li>
+            
+            
+            ))}
+            
+            </ul>
+            */
+        <>
             <div className='lmj-shopping-list'>
-         
 
-                    <Categorie></Categorie>
+
+                <Categorie
+                    categoriesUniques={categoriesUniques}
+                    activeCategorie={activeCategorie}
+                    setActiveCategorie={setActiveCategorie}
+
+                />
                 <ul className='lmj-plant-list'>
-                    {plantList.map(({ id, cover, name, water, light }) => (
-                        <div>
+                    {plantList.map(({ id, cover, name, water, light, category }) => (
+                        !activeCategorie || activeCategorie === category ? (
 
-                            <PlantItem
+                            <div
                                 id={id}
-                                cover={cover}
-                                name={name}
-                                water={water}
-                                light={light}
-                                
+                            >
+
+                                <PlantItem
+                                    cover={cover}
+                                    name={name}
+                                    water={water}
+                                    light={light}
+                                   
+
                                 />
-                                <button onClick={()=> updateCart(cart + 1)}>
-                                ajouter
+                                <button onClick={() => updateCart(cart + 1)}>
+                                    ajouter
                                 </button>
-                        </div>
+                            </div>
+                        ) : null
                     ))}
 
                 </ul>
