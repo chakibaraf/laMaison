@@ -1,10 +1,11 @@
 import React from 'react'
 import { plantList } from '../datas/plantList.js'
-
+import '../styles/ShoppingList.css';
 import PlantItem from './PlantItem.js';
 import QuestionForm from './QuestionForm.js';
+import Categorie from './Categorie.js';
 
-export default function ShoppingList() {
+export default function ShoppingList({cart , updateCart}) {
 
 
 
@@ -26,51 +27,53 @@ export default function ShoppingList() {
         return acc;
     }, [])
     */
-    return (
-        /**
-         * <ul>
-                <h2>plante a vendre </h2>
-                {plantList.map((plant) => (
-                    <li key={plant.id}>
-                        {plant.name}
-                        {plant.isBestSale ? <span>🔥 </span> :  null }
-                        {plant.isSpecialOffer && <div className='lmj-sales'>SOLDES</div> }
-                        <CareScale careType='light' scaleValue={plant.light}/>
-                        <CareScale careType='water' scaleValue={plant.water}/>
-                       
-    
-                            </li>
-                            
-                        
-                ))}
-               
-            </ul>
-         */
-        <>
-            <h2> Categorie de plante</h2>
-            
-            <ul>
-                {categoriesUniques.map((category, index) => (
-                    <li key={index}>{category}</li>
-                ))}
-            </ul>
-            
+   return (
+       /**
+        * <ul>
+       <h2>plante a vendre </h2>
+       {plantList.map((plant) => (
+           <li key={plant.id}>
+           {plant.name}
+           {plant.isBestSale ? <span>🔥 </span> :  null }
+           {plant.isSpecialOffer && <div className='lmj-sales'>SOLDES</div> }
+           <CareScale careType='light' scaleValue={plant.light}/>
+           <CareScale careType='water' scaleValue={plant.water}/>
+           
+           
+           </li>
+           
+           
+           ))}
+           
+           </ul>
+           */
+          <>
+            <div className='lmj-shopping-list'>
+         
 
-            <ul className='lmj-plant-list'>
-                {plantList.map(({id, cover , name , water , light})=>(
-                    <PlantItem
-                    id={id}
-                    cover={cover}
-                    name={name}
-                    water={water}
-                    light={light}
-                    
-                    />
-                ))}
+                    <Categorie></Categorie>
+                <ul className='lmj-plant-list'>
+                    {plantList.map(({ id, cover, name, water, light }) => (
+                        <div>
 
-            </ul>
-                    
-            <QuestionForm/>
+                            <PlantItem
+                                id={id}
+                                cover={cover}
+                                name={name}
+                                water={water}
+                                light={light}
+                                
+                                />
+                                <button onClick={()=> updateCart(cart + 1)}>
+                                ajouter
+                                </button>
+                        </div>
+                    ))}
+
+                </ul>
+            </div>
+
+            <QuestionForm />
         </>
     )
 }
