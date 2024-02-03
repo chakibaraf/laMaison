@@ -3,8 +3,8 @@ import React from 'react'
 
 const quantity = {
     1: 'peu',
-    2:'modere',
-    3:'beaucoup'
+    2: 'modere',
+    3: 'beaucoup'
 }
 
 export default function CareScale({ scaleValue, careType }) {
