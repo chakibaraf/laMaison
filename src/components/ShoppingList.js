@@ -49,7 +49,7 @@ export default function ShoppingList({ cart, updateCart }) {
             </ul>
             */
         <>
-            <div className='lmj-shopping-list'>
+            <div className='lmj-shopping-list' >
 
 
                 <Categorie
