@@ -8,7 +8,7 @@ import Cart from './Cart';
 import { useState } from 'react';
 
 function App() {
-  const [cart,updateCart] = useState([])
+  const [cart , updateCart] = useState([])
   return (
     <>
     <Banner>
