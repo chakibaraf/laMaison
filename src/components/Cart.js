@@ -15,25 +15,27 @@ export default function Cart({ cart, updateCart }) {
 
 
   return isOpen ? (
+      <div className='lmj-cart'>
 
-    <div className='lmj-cart'>
+   
       <button className='lmj-cart-toggle-button' onClick={() => setIsOpen(false)}>fermer</button>
 
       <h2> Mon Panier</h2>
       {cart.map(({ name, price, amount }, index) => (
         <div key={`${name}-${index}`}>{name} {price}€ * {amount} </div>
-      ))}
+        ))}
 
       <div>
 
 
         <button onClick={() => updateCart([])}>vider le panier</button>
       </div>
-      <h3> Total : {total}€</h3>
+        <h3> Total : {total}€</h3>
     </div>
 
 
 
+       
   ) : (
     <div className='lmj-cart-closed'>
 

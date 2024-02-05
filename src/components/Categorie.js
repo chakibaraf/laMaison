@@ -1,4 +1,5 @@
 import React from 'react'
+import '../styles/Categories.css'
 
 
 
@@ -14,15 +15,16 @@ export default function Categorie({ setActiveCategorie, activeCategorie , catego
     }, [])*/
     return (
         <>
-            <h2> Categorie de plante</h2>
-            <div>
+            
+            <div className='lmj-categories'>
                 <ul>
 
                     <select 
+                    className='lmj-categories-select'
                     value={activeCategorie}
                     onChange={(e)=> setActiveCategorie(e.target.value)}
                     >
-                        <option value="'">----</option>
+                        <option value="">----</option>
                         {categoriesUniques.map((category, index) => (
                             <option key={category} value={category}>{category} </option>
                         ))}

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { plantList } from '../datas/plantList.js'
 import '../styles/ShoppingList.css';
 import PlantItem from './PlantItem.js';
-import QuestionForm from './QuestionForm.js';
+
 import Categorie from './Categorie.js';
 
 export default function ShoppingList({ cart, updateCart }) {
@@ -69,7 +69,7 @@ export default function ShoppingList({ cart, updateCart }) {
             <div className='lmj-shopping-list' >
 
 
-                <Categorie
+                <Categorie className="lmj-cat"
                     categoriesUniques={categoriesUniques}
                     activeCategorie={activeCategorie}
                     setActiveCategorie={setActiveCategorie}
@@ -101,7 +101,7 @@ export default function ShoppingList({ cart, updateCart }) {
                 </ul>
             </div>
 
-            <QuestionForm />
+           
         </>
     )
 }

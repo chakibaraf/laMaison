@@ -9,4 +9,9 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-self: flex-start;
+}
+
+.lmj-cat{
+    margin-top: 30px;
 }

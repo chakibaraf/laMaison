@@ -52,7 +52,8 @@ export const plantList = [
         isBestSale:true,
 		light:3,
 		water:2,
-		cover : monstera
+		cover : monstera,
+		price :24
 	},
 	{
 		name: 'géranium',
