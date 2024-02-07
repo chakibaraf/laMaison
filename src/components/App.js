@@ -5,15 +5,27 @@ import Banner from './Banner';
 import ShoppingList from './ShoppingList';
 import logo from '../assets/logo.png'
 import Cart from './Cart';
-import { useState } from 'react';
+import {  useState , useEffect} from 'react';
 import '../styles/Layout.css'
 
 function App() {
-  const [cart , updateCart] = useState([])
+ 
+  const savedCart = localStorage.getItem('cart');
+  const [cart , updateCart] = useState(savedCart ? JSON.parse(savedCart) : []);
+ 
+useEffect(()=> {
+ 
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    
+  },[cart])
+  console.log(cart)
+  console.log()
+
   return (
     <>
     <Banner>
-      <img src={logo} alt="maison plante" srcset="" className='lmj-logo' />
+      <img src={logo} alt="maison plante" srcSet="" className='lmj-logo' />
       <h1 className='lmj-title'>Maison Plante</h1>
     </Banner>
     
