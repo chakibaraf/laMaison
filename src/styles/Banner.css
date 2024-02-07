@@ -3,11 +3,12 @@
     color : black;
     text-align: right;
     padding: 32px;
-    border-bottom: solid 3px black;
+    border-bottom: solid 0.5px black;
     display: flex;
     justify-content: flex-end;
     flex-direction: row;
     align-items: center;
+    background: linear-gradient(to left, white, rgb(219, 223, 89), rgba(64, 195, 101, 0.668));
 }
 
 .lmj-title{

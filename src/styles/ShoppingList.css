@@ -10,8 +10,32 @@
     flex-wrap: wrap;
     justify-content: center;
     align-self: flex-start;
+    font-weight: bold;
 }
 
 .lmj-cat{
     margin-top: 30px;
+}
+
+.lm-shopping-button{
+    display: inline-block;
+    padding: 10px 16px;
+    font-size: 15px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 50px;
+    margin-top: 10px;
+    background: linear-gradient(to right, #3498db, #2980b9); /* Dégradé de bleu à une nuance plus foncée de bleu */
+    color: white; /* Couleur du texte */
+    border: 2px solid #3498db; /* Bordure du bouton */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    transition: background 0.3s ease, color 0.3s ease, border 0.3s ease; /* Transition fluide */
+
+    /* Style au survol */
+    &:hover {
+        background: linear-gradient(to right, #2980b9, #3498db);
+        color: #fff;
+        border: 2px solid #2980b9;
+    }
 }

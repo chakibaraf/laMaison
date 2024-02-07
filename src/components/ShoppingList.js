@@ -91,7 +91,7 @@ export default function ShoppingList({ cart, updateCart }) {
                                    
 
                                 />
-                                <button onClick={() => addToCart(name , price)}>
+                                <button className='lm-shopping-button' onClick={() => addToCart(name , price)}>
                                     ajouter
                                 </button>
                             </div>

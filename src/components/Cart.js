@@ -33,9 +33,9 @@ export default function Cart({ cart, updateCart }) {
 
 
         <div>
-          <h2>  Panier</h2>
+          <h2 className='lmj-cart-titrep'>  Panier</h2>
           {cart.map(({ name, price, amount }, index) => (
-            <div key={`${name}-${index}`}>
+            <div className='lmj-cart-text' key={`${name}-${index}`}>
               {name} {price}€ * {amount} </div>
           ))}
 
@@ -43,7 +43,7 @@ export default function Cart({ cart, updateCart }) {
 
 
           <h3> Total : {total}€</h3>
-            <button onClick={() => updateCart([])}>vider le panier</button>
+            <button className='lm-cart-button' onClick={() => updateCart([])}>vider le panier</button>
           </div>
         </div>
 

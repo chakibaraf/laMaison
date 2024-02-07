@@ -1,7 +1,6 @@
 .lmj-cart {
     padding: 32px;
-    color: white;
-    background-color: #31b572;
+    background: linear-gradient(to top, white, rgb(219, 223, 89), rgba(64, 195, 101, 0.668));
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -12,6 +11,22 @@
    
    
 
+}
+
+.lmj-cart-titrep{
+    margin-top: 30px;
+    font-weight: bold;
+    font-size: 30px;
+   
+}
+
+.lmj-cart-text{
+    color: white;
+    margin-bottom: 30px;
+    margin-top: 20px;
+    
+    
+    
 }
 .lmj-cart-add-button{
     margin-left:32px;
@@ -36,4 +51,25 @@
 
 .lmj-cart-closed> button {
     color: black;
+}
+
+.lm-cart-button{
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 50px;
+    margin-top: 20px;
+    background: linear-gradient(to right, #4CAF50, #45a049); /* Dégradé de vert à une nuance plus foncée de vert */
+    color: white; /* Couleur du texte */
+    border: 2px solid #4CAF50; /* Bordure du bouton */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    transition: background 0.3s ease, color 0.3s ease, border 0.3s ease; /* Transition fluide */
+    &:hover {
+        background: linear-gradient(to right, #45a049, #4CAF50);
+        color: #fff;
+        border: 2px solid #45a049;
+    }
 }
